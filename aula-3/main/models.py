@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 class Aluno(models.Model):
     nome = models.CharField(max_length=254)
-    sobrenome = models.CharField(null=True, blank=True,max_length=15)
+    telefone = models.CharField(null=True, blank=True,max_length=15)
     email = models.EmailField()
     data_nascimento = models.DateField()
     description = models.TextField()

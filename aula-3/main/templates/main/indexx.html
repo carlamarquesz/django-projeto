@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %}Lista de Alunos{% endblock %} 
+{%block content %}
+<form method="POST">
+    {% comment%}A tag csrf_token é responsável por realizar a proteção contra ataques CSRF (Cross-site request forgery) 
+    ou seja, a falsificação de solicitações entre sites {% endcomment %}
+    {% csrf_token %} 
+    <div class="form-row">
+        <div class="col-7">
+            <input type='text' name='nome' id='nome' class="form-control" placeholder="nome">
+            <label for="nome"></label>
+        </div>
+        <div class="col">
+            <input type='email' name='email' id='email' class="form-control" placeholder="E-mail">
+            <label for="email"></label>
+        </div>
+        <div class="col">
+            <input type='tel' name='telefone' id='telefone' class="form-control" placeholder="telefone">
+            <label for="telefone"></label>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Enviar</button> 
+        </div>
+    </div>
+</form>
+{% endblock %}
