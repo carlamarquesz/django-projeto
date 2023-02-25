@@ -17,13 +17,25 @@
   </thead>
   <tbody>
     {% for aluno in alunos %}      
-        <tr>
-            <td><span><a href="/aluno/{{aluno.id}}">{{aluno.nome}}</a></span></td>
-            <td><a href="edit/{{aluno.id}}"><span><i class="fas fa-edit"></i></span></td>  <!--<span><i class="fas fa-edit"></i></span> -->
-            <td><a href="delete/{{aluno.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></td> <!-- <span><i class="fas fa-trash"></i></span> -->
-        </tr>            
+      <tr>
+        <td><span><a href="/aluno/{{aluno.id}}">{{aluno.nome}}</a></span></td>
+        <td><a href="edit/{{aluno.id}}"><span><i class="fas fa-edit"></i></span></td>  <!--<span><i class="fas fa-edit"></i></span> -->
+        <td><a href="delete/{{aluno.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></td> <!-- <span><i class="fas fa-trash"></i></span> -->
+      </tr>            
     {% endfor %}
-
+    <!--{% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+              {% if message.tags == "success-add" %}
+                  <li>{{ message }}</li>
+              {% elif message.tags == "success-remove" %}
+                  <li>{{ message }}</li>
+              {% else %}
+                  <li>{{ message }}</li>
+              {% endif %}
+          {% endfor %}
+      </ul>
+    {% endif %} -->
   </tbody>
 </table>
 {% endblock %}
