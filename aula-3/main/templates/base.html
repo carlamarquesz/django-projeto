@@ -27,7 +27,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/accounts/login">Entrar</a>
+                        <a class="nav-link" href="/">Entrar</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
@@ -35,7 +35,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/accounts/logout">Sair</a>
+                        <a class="nav-link" href="account/login">Sair</a>
                     </li>
                     {% endif %}
                 </ul>

@@ -2,11 +2,13 @@ from django.shortcuts import redirect, render, get_object_or_404
 from .models import Aluno
 from .forms import AlunoForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # faz os tratamentos dos dados
 # importa a tabela Aluno
 
 
+@login_required
 def alunoView(request):
     alunos = Aluno.objects.all().order_by(
         "nome"
@@ -41,6 +43,7 @@ e salva esse objeto no banco de dados. Em seguida, o código redireciona o usuá
 """
 
 
+@login_required
 def newAluno(request):
     if request.method == "POST":
         form = AlunoForm(request.POST)
